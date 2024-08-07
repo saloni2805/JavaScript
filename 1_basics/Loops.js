@@ -50,3 +50,7 @@ const MyCoding = [
 MyCoding.forEach((element) => {
   console.log(element.Version)
 })
+
+// ForEach doesnt return anything
+
+// Filter returns value

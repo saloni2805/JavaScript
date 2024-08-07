@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jssss</title>
+  </head>
+  <body style="background-color: azure; color: brown"></body>
+  <script>
+    const div = document.createElement("div")
+
+    div.className = "main"
+    div.id = Math.floor(Math.random() * 10 + 1)
+    div.setAttribute("title", "generated title")
+    div.style.background = "yellow"
+    div.style.padding = "12px"
+    div.innerText = "Heyyy"
+    const addText = document.createTextNode("Hiohwfg ")
+    // console.log(addText)
+    div.appendChild(addText)
+
+    document.body.appendChild(div)
+  </script>
+</html>
