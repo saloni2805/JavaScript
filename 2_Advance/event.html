@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Events</title>
+  </head>
+  <body>
+    <ul id="ul">
+      <li><h3 id="Hey">Heyyyy, Click mee</h3></li>
+      <li><h3 id="Byy">Byy, Click mee</h3></li>
+    </ul>
+  </body>
+  <script>
+    // Old Way
+    //   document.getElementById('Hey').onclick =function(){
+    //   alert("Owl Click")
+    // }
+
+    // --------->> New Way <<----------
+    // document.getElementById("Hey").addEventListener("click", function () {
+    //   alert("Owl clicked again")
+    // })
+
+    // ------ IMP -----
+    // type, timestamp, defaultPrevented
+    // target, toElement, srcElement, currentTarget
+    // clientX, clientY, screenX, screenY
+    // altKey, ctrlkey, shiftkey, keyCode
+
+    // Propogation
+    // Bubbeling Events- false condition
+    // Capturing Events- True Condition
+
+    // By default False
+    // document.getElementById("ul").addEventListener("click", function (e) {
+    //   console.log("clicked inside ul")
+    // })
+
+    // document.getElementById("Hey").addEventListener("click", function (e) {
+    //   console.log("clicked Hey")
+    //   e.stopPropagation()
+    //   // It will stop bubbeling
+    // })
+
+    // document.getElementById("Byy").addEventListener("click", function (e) {
+    //   e.preventDefault()
+    //   e.stopPropagation()
+
+    //   console.log("clicked Byy")
+    // })
+
+    // --- To Remove ----
+    // document.querySelector("#ul").addEventListener("click", function (e) {
+    //   console.log(e.target.parentNode)    // e.target means sglyt aatla element or tag
+    //   let removeIt = e.target.parentNode
+    //   removeIt.remove()
+    //   // removeIt.parentNode.removeChild(removeIt)
+    // })
+
+    document.querySelector("#ul").addEventListener("click", function (e) {
+      console.log(e.target.tagName)
+      if (e.target.tagName === "H3") {
+        console.log(e.target.id)
+        let removeIt = e.target.parentNode
+        removeIt.remove()
+      }
+
+      // removeIt.parentNode.removeChild(removeIt)
+    })
+  </script>
+</html>
