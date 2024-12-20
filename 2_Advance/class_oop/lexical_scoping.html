@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function User() {
+        let name = "saloni" // We can access this variable from any function, this has global scope
+        function inside1() {
+          let nameinside1 = "ssp"
+          console.log(name) // the ame variable declared outside the function has access inside
+        }
+        function inside2() {
+          let nameinside2 = "ssp2"
+          console.log(nameinside1) // We can not access variable declared inside another sibling function
+        }
+        inside1()
+        inside2()
+      }
+      User()
+    </script>
+  </body>
+</html>
