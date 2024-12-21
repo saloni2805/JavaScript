@@ -13,13 +13,15 @@
       // returned with its *Lexical Scope*
 
       function clickhandler(color) {
-        // Only giving value like this doesnt make any changes, we have to retun function
+        // Only giving value like this doesnt make any changes, we have to retun function which
+        // returns whole scope not only that function
         // document.body.style.backgroundColor = `${color}`
 
         return function () {
           document.body.style.backgroundColor = `${color}`
         }
       }
+      // Passed reference of above function but it needs function
       document.getElementById("orange").onclick = clickhandler("orange")
       document.getElementById("green").onclick = clickhandler("green")
     </script>
